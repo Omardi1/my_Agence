@@ -1,0 +1,23 @@
+{% extends 'Agence/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<br><br><br>
+
+<div class="container">
+  <div class="col-md-6 m-auto">
+      <form method="POST" style = "margin-top: 35px;">
+      {% csrf_token %}
+      <div class="alert alert-danger" role="alert">
+          <h5>Etes-vous sur de vouloir supprimer ce produit ! {{ suite.name }}</h5>
+        </div>
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+        <a class="btn btn-secondary" href="{% url 'suite_list' %}">Annuler</a>
+  </form>
+  </div>
+</div>
+</div>  
+
+{% endblock %}
+

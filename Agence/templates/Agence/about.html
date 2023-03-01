@@ -1,0 +1,48 @@
+{% extends 'Agence/base.html' %}
+{% load static %}
+
+{% block content %}
+<br><br><br><br>
+<body class="">
+    <div>
+        <style>
+            h1 {
+                margin-top: 100px;
+                color: #000000;
+                text-align: center;
+            }
+        </style>
+        <h1>Sunu Agence Bienvenue Chez Vous !</h1>
+        <style>
+            video {
+                display: block;
+                margin: 0 auto;
+                width: 80%;
+            }
+        </style>
+        <video width="640" height="360" controls autoplay>
+            <source src="{% static 'video/contrat.mov' %}" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+        </video>
+    </div>
+    <br><br><br><br>
+    <section class="about bg-white">
+        <div class="main">
+            <img src="{% static 'img/App.webp' %}" alt="my image ">
+            <div class="about-text">
+                <h2 style="color: #000000;">About us</h2>
+                <h5 style="color: #000000;">Agence De Reservation De Chambres & d'Appartements</span></h5>
+                <p style="color: #000000;">
+                Bienvenue chez notre agence de réservation de chambres et d'appartements ! Nous sommes une équipe passionnée et expérimentée, déterminée à rendre votre séjour aussi agréable que possible. Notre agence propose une large sélection d'hébergements de qualité, allant des chambres confortables aux appartements spacieux et luxueux, pour répondre à tous les besoins et budgets. Nous travaillons en étroite collaboration avec des propriétaires d'hébergements locaux pour vous offrir les meilleurs tarifs et offres exclusives. Notre objectif est de rendre la planification de votre séjour aussi simple que possible, avec un service de réservation facile à utiliser, une assistance personnalisée et une communication transparente à chaque étape du processus. Nous sommes impatients de vous accueillir chez nous et de vous faire vivre une expérience inoubliable !
+              </p>
+                <button style="background-color: #301E67;" type="button">lets talk</button>  
+                <a href="media/cv.docx" title="" download="cv.docx"></a>> 
+                <button style="background-color: #301E67;" type="submit" id="submit">Contacter nous</button> 
+                </a>    
+            </div>
+        </div>
+    </section>
+</body>
+
+
+{% endblock %}

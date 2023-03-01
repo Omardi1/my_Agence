@@ -1,0 +1,14 @@
+{% extends 'Agence/base.html' %}
+
+
+{% load static %}
+{% block content %}
+<table> 
+<form method="post" action="{% url 'validate_cart' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Valider le panier">
+</form>
+</table>
+
+{% endblock %}

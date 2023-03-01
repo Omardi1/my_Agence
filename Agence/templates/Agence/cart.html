@@ -1,0 +1,49 @@
+{% extends 'Agence/base.html' %}
+
+{% block content %}
+<br><br><br>
+<div class="d-flex justify-content-center">
+
+<table>
+    <thead>
+        <tr>
+            <th>Suite</th>
+            <th>Quantité</th>
+            <th>Prix unitaire</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in cart.orders.all %}
+        <tr>
+            <td>
+                <img src="{{ order.suite.image.url }}" alt="{{ order.suite.name
+                    }}" style="max-width:
+                    250px;">
+                    <br><br>
+            </td>
+            <form action="" method="post">
+                {% csrf_token %}
+            <td>{{order.suite.name}}</td>
+            <td>{{order.quantity }}</td>
+            <td>{{order.suite.price}}</td>
+            <td>{{form.total}}</td>
+            <td>{{order.slug }}</td>
+            <td>
+            </td>
+        </tr>
+        </form>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br><br>
+<p>Panier ({{ user.cart.orders.count }})</p>
+<h2>Total: {{ total_price }} $</h2>
+<br>
+<a href="{% url 'delete_cart' %}"><button class="btn btn-danger">Supprimez</button></a>
+<a href="{% url 'validate_cart' %}"><button class=" btn btn-primary">Validez</button></a>
+</div>
+
+{% endblock %}
+

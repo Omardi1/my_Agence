@@ -1,0 +1,102 @@
+{% extends "Agence/base.html" %}
+
+
+{% load static %}
+
+{% block content %}
+<br><br><br><br><br><br>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<body>
+    <div class="contactUs">
+        <div class="title">
+            <h2 class="justify-center" style="text-align: center; color:white">Sunu Agence</h2>
+        </div>
+        <div class="box">
+            <div class="contact form" style="font-weight: 20px; font-size:small">
+                <h3>Envoie un Message</h3>
+                <form>
+                    <div class="formBox">
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>Prenom</span>
+                                <input type="text" placeholder="Omar">
+                            </div>
+                            <div class="inputBox">
+                                <span>Nom</span>
+                                <input type="text" placeholder="Omar">
+                            </div>
+                        </div>
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>Email</span>
+                                <input type="text"
+                                    placeholder="omzdiombaty@gmail.com">
+                            </div>
+                            <div class="inputBox">
+                                <span>Telelphone</span>
+                                <input type="text" placeholder="+221 77 907
+                                    94 46">
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputBox">
+                                <span>Message</span>
+                                <textarea placeholder="write your here...!"></textarea>
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputBox">
+                                <input type="submit" value="send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <!--info box-->
+            <div class="contact info">
+                <h3>Contact info</h3>
+                <div class="infoBox">
+                    <div>
+                        <span><ion-icon name="location-outline"></ion-icon></span>
+                        <p>Agence de location d'Appartements & Chambres en
+                            ligne <br>Ziguinchor</p>
+                    </div>
+                    <div>
+                        <span><ion-icon name="mail-outline"></ion-icon></span>
+                        <a href="#">omzdiombaty@gmail.com</a>
+                    </div>
+                    <div>
+                        <span><ion-icon name="call-outline"></ion-icon></span>
+                        <a href="tel:+2219079446">+221 77 907 94 46</a>
+                    </div>
+                    <!--media social-->
+                    <ul class="sci">
+                        <li><a href=""><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href=""><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href=""><ion-icon name="logo-instagram"></ion-icon></a></li>
+                        <li><a href=""><ion-icon name="logo-whatsapp"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--map-->
+            <div class="contact map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53681.84564237143!2d-16.30830008503983!3d12.562754401067952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xee793dbd0cbdc17%3A0x25b90fb2e17e99df!2sZiguinchor!5e0!3m2!1sfr!2ssn!4v1673614162380!5m2!1sfr!2ssn"
+                    style="border:0;"
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <script type="module"
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "Agence/base.html" %}
+
+
+{% block content %}
+<br><br><br><br>
+<div class="d-flex judtify-content-center">
+<h1>Mon panier</h1>
+
+{% if cart.orders.count > 0 %}
+    <table class="flex-end">
+        <thead>
+            <tr>
+                <th>Suite</th>
+                <th>Quantité</th>
+                <th>Prix unitaire</th>
+                <th>Sous-total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in cart.orders.all %}
+                {% if not order.ordered %}
+                    <tr>
+                      <td>
+                        <img src="{{ order.suite.image.url }}" alt="{{ order.suite.name
+                            }}" style="max-width:
+                            250px;">
+                            <br><br>
+                    </td>
+                        <td>{{ order.suite.name }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>{{ order.suite.price }} €</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total :</td>
+                <td>{{ total }} €</td>
+            </tr>
+        </tfoot>
+    </table>
+{% else %}
+    <p>Votre panier est vide.</p>
+{% endif %}
+</div>
+{% endblock content %}

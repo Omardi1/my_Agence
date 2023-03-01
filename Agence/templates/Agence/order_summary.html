@@ -1,0 +1,42 @@
+{% extends 'Agence/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="container-md col-4 ">
+    <hr style = "border-top: 3px double #8c8b8b"> 
+    <br><br> 
+    <div>
+        <h1>Résumé de ma commande</h1>
+    </div>
+<table>
+    <tr>
+        <th>Article</th>
+        <th>Quantité</th>
+        <th>Prix total: {{ total_price }} $</th>
+        <th>Date de commande</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>
+            <img src="{{ order.suite.image.url }}" alt="{{ order.suite.name
+                }}" style="max-width:
+                250px;">
+                <br><br>
+        </td>
+        <td>{{ order.suite.name }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.suite.price }}</td>
+        <td>{{ order.ordered_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'thank_you' total_price=total_price %}" class="btn btn-warning" style="width: 20%;">Valider</a>
+
+
+    </div>
+</div>
+</body>
+{% endblock %}

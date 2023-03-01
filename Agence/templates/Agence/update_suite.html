@@ -1,0 +1,42 @@
+{% extends 'Agence/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <div class="container-md col-4 ">
+  <h1 class="text-center">Mettre à jour la suite</h1>
+  <hr style = "border-top: 3px double #8c8b8b">  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group row mb-3">
+      {{ form.name.label_tag }}
+      {{ form.name }}
+    </div>
+    <div class="form-group row mb3">
+      {{ form.city.label_tag }}
+      {{ form.city }}
+    </div>
+    <div class="form-group row mb-3">
+      {{ form.category.label_tag }}
+      {{ form.category }}
+    </div>
+    <div class="form-group row mb-3">
+      {{ form.slug.label_tag }}
+      {{ form.slug }}
+    </div>
+    <div class="form-group row mb-3">
+      {{ form.price.label_tag }}
+      {{ form.price }}
+    </div>
+    <div class="form-group row mb-3">
+      {{ form.image.label_tag }}
+      {{ form.image }}
+    </div>
+    <button type="submit" class="btn btn-primary">Sauvegarder</button>
+  </form>
+</div>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,39 @@
+{% extends 'Agence/base.html' %}
+
+{% block content %}
+
+<body>
+    <div class="row">
+        <div class = "container-md  col-4" >    
+            <h1 class = "display-5"> Modifier </h1>  
+            <hr style = "border-top: 3px double #8c8b8b">  
+
+<h2>{{ suite.name }}</h2>
+<h3>{{ suite.price }}</h3>
+{% if suite.image %}
+<img src="{{ suite.image.url }}" alt="{{ suite.name }}" style="max-width:
+    250px;">
+    {% endif %}
+    <br><br>
+<p>{{ suite.description }}</p>
+<p>
+    <br><br>
+    <a href="{% url 'add-to-cart' suite.slug %}" class="btn btn-success" style="width: 20%;">Ajouter</a>
+</p>
+<p>
+    <br>
+    <a href="{% url 'delete_cart' %}" class="btn btn-danger" style="width: 20%;">Supprimer le panier</a>
+    <br><br>
+    <a href="{% url 'update_suite' suite.slug %}" class="btn btn-secondary" style="width: 20%;">Modifier</a>
+    <br><br>
+    <a href="{% url 'delete_suite' suite.slug %}" class="btn btn-danger" style="width: 20%;">Sipprimer</a>
+</p>
+<style>
+    a {
+        height: 50;
+    }
+</style>
+</div>
+</div>
+</body>
+{% endblock %}

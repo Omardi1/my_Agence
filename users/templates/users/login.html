@@ -1,0 +1,129 @@
+{% extends 'Agence/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<br><br><br><br><br><br>
+<html>
+    <div class="login">
+        <body><h1>Login</h1>
+            <div class="avatar">
+                <img src="" alt="">
+            </div>
+            <form method="POST" class="login-form">
+                <div class="textbox">
+                {% csrf_token %}
+                    <p>
+                        <label for="username">Non d'utilisateur</label>
+                        <input id="username" type="text" name="username">
+                        <span class="material-symbols-outlined">
+                        </span>
+                    </p>
+                </div>
+                <div class="textbox">
+                    <p>
+                        <label for="username">Mot de passe</label>
+                        <input id="password" type="password" name="password">
+                        <span class="material-symbols-outlined">
+                        </span>
+                    </p>
+                </div>
+                <button type="submit">Login</button>
+                <a href="{% url 'login' %}"></a>
+            </form>
+            <style>
+                /*style.css*/
+                *{box-sizing: border-box;}
+                html, body {height: 100%;}
+                @keyframes background {
+                    100% { background-size: 4000px 1000px;}
+                }
+                body {
+                    display: grid;
+                    place-items: center;
+                    margin: 0;
+                    padding: 0 24px;
+                    background-image: url("bg.svg");
+                    background-size: 2000px 1000px;
+                    background-position: -500px 0;
+                    color: #f9f9f9;
+                    font-family: "Euclid circular A";
+                    animation: 
+                      background 10s infinite alternate linear;
+                    background-color: #157ae1;  
+                }
+                @media (width >= 500px) {
+                    body {padding: 0;}
+                }
+                .login {
+                    width: 90%;
+                    padding: 70px 30px 44px;
+                    border-radius: 22px;
+                    background: #161616;
+                    text-align: center;
+                }
+                @media (width >= 450px) {
+                    .login {width: 380px;}
+                }
+                .avatar {
+                    margin: 0 auto 16px;
+                    border-radius: 50px;
+                    background: linear-gradient(-45deg, #216ce7, #c7a1ff);
+                    padding: 2px;
+                    width: 120px;
+                    height: 120px;
+                }
+                .avatar > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 4px solid #161616;
+                }
+                .login > h1 {
+                    font-size: 36px;
+                    font-weight: 500;
+                    margin: 0 0 4px;
+                }
+
+                .login-form {
+                    display: grid;
+                    gap: 16px;
+                    place-items: center;
+                    width: 100%;
+                    margin: 0;
+                }
+                .login-form input {
+                    background: transparent;
+                    border: 2px solid rgb(255, 255, 255, 0.1);
+                    font-size: 18px;
+                    padding: 0 20px 0 50px;
+                    color: inherit;
+                }
+                .login-form input:focus {
+                    border-color: #157ae1;
+                }
+                .login-form input:focus ~ span {
+                    color: #157ae1;
+                }
+                .login-form button {
+                    cursor: pointer;
+                    background: #157ae1;
+                    color: #f9f9f9;
+                    border: 0;
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                }
+                .login-form a {
+                    color: #157ae1;
+                    font-size: 16px;
+                    text-align: left;
+                    text-decoration: none;
+                }
+            </style>
+        </body>
+    </div>
+</html>
+
+
+{% endblock %}

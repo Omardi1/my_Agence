@@ -1,0 +1,81 @@
+{% extends "Agence/base.html" %}
+{% load static %}
+
+{% block content %}
+<br><br><br><br>
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous">
+    <center>
+      <section>
+        <h1 class="text-center pb-2">Le meilleur site de réservation</h1>
+      
+        <div class="row">
+          <div class="col-md-8 mx-auto mb-4">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Que voulez-vous réserver?" aria-label="Search"
+                name="q">
+              <button class="btn btn-outline-success" type="submit">Rechercher</button>
+            </form>
+          </div>
+        </div>
+      
+        <div class="row">
+      
+          <div class="col-md-3">
+            <h2>Liste des catégories</h2>
+            <ul class="list-group" style="left: 50%;">
+              {% for category in categories %}
+              <li class="list-group-item">
+                <a href="#">{{ category.name }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="mt-2">
+           
+            
+          </div>
+      
+          <div class="col-md-9">
+            <div class="row">
+      
+              {% if suites %}
+      
+              {% for suite in suites %}
+              <div class="aspect-ratio-box">
+                  {% if suite.image %}
+                  <br>
+                  <img src="{{ suite.image.url }}" class="card-img-top"
+                      alt="{{
+                      suite.name }}">
+                      {% endif %}
+                  <style>
+            .aspect-ratio-box {
+              position: relative;
+            }
+            .aspect-ratio-box::after {
+              display: block;
+            }
+            .aspect-ratio-box img {
+              position: relative;
+              left: 0;
+              right: 0;
+              width: 30%;
+              height: 15%;
+      
+            }
+          </style>
+              {% endfor %}
+              {% else %}
+              <p class="text-center">Pas de produit de ce nom</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </section>
+    </center>
+    <br><br><br>
+{% endblock %}
